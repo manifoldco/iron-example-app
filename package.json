@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "deploy": "docker build -t $TAG . && docker push $TAG && manifold run -- iron register -e \"MANIFOLD_API_TOKEN=$MANIFOLD_TOKEN\" $TAG",
+    "start": "manifold run -- node server/index.js"
+  },
+  "dependencies": {
+    "iron_worker": "^0.1.6",
+    "logdna": "^2.0.2"
+  }
+}
